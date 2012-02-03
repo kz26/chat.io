@@ -1,0 +1,100 @@
+.fancy-box {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px #666;
+}
+
+}
+
+label, input, select, .bigger {
+    font-size: 1.1em;
+}
+
+label {
+    padding-right: 5px;
+}
+
+.error {
+    color: red;
+}
+
+#chat-box-p {
+    margin-bottom: 1em;
+    border-bottom: 1px black solid;
+}
+
+#chat-window, #chat-user-list {
+    padding: 5px;;
+    border: 1px black solid;
+    margin-bottom: 5px;
+    overflow: scroll;
+    height: 450px;
+}
+
+#chat-user-ul li {
+    color: #2b328a;
+    text-align: right;
+}
+
+#chat-user-ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#msg {
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+#chat-tabs {
+    margin-bottom: 10px;
+}
+
+#chat-tabs li {
+    display: inline;
+    padding: 0.5em;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#chat-tabs li:hover {
+    background-color: #2b328a;
+}
+
+.selected {
+    background-color: #800000 !important;
+}
+
+.newmsg {
+    font-weight: bold;
+    font-style: italic;
+    background-color: green !important;
+}
+
+.blocked {
+    color: red !important;
+    text-decoration: line-through;
+}
+
+a.blockbtn {
+    text-decoration: none;
+    display: inline;
+    font-weight: bold;
+    padding: 0.5em;
+    background-color: #2b328a;
+    color: white;
+    border-radius: 10px;
+}
+
+a:hover.blockbtn {
+    background-color: #800000;
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}

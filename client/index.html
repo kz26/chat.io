@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>chat.io</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/960.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/eggplant/jquery-ui.css">
+
+<script src="js/jquery-1.6.2.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+</head>
+<body>
+
+<div class="container_12">
+    <div id="chat-box" class="grid_12 fancy-box">
+        <ul id="chat-tabs">
+        <li id="ct-main" class="selected">Main</li>
+        </ul>
+        <div class="grid_10 alpha">
+
+            <div id="chat-window">
+                <div id="cw-main"><p>Connecting...</p></div>
+            </div>
+        </div>
+        <div class="grid_2 omega">
+            <div id="chat-user-list">
+            <ul id="chat-user-ul">
+            </ul>
+
+            </div>
+        </div>
+        <form id="sender">
+            <input id="msg" type="text" disabled="disabled" />
+        </form>
+    </div>
+</div>
+
+
+<!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
+<script src="js/moment.min.js"></script>
+<script src="js/autolink.js"></script>
+<script src="js/jquery.jqote2.min.js"></script>
+<script src="js/strip.min.js"></script>
+
+<script type="text/html" id="login-tpl">
+<div>
+<form id="nickform">
+<label for="nick-input">Nickname: </label><input id="nick-input" />
+</form>
+</div>
+</script>
+
+<script type="text/html" id="err-connected-tpl">
+<div><p><span class="ui-icon ui-icon-closethick" style="float:left; margin:0 7px 20px 0;">></span>
+This chat session has been disconnected. Only one chat session may be active at a time.
+</p></div>
+</script>
+
+<script type="text/html" id="err-disconnected-tpl">
+<div><p><span class="ui-icon ui-icon-closethick" style="float:left; margin:0 7px 20px 0;">></span>The connection to the server was interrupted.</p></div>
+</script>
+
+
+<script type="text/html" id="cw-div-tpl">
+<div data-nick="<%= this.nick %>"></div>
+</script>
+
+<script type="text/html" id="nick-li-tpl">
+<li data-nick="<%= this.nick %>" title="Click for more options"><%= this.nick %></li>
+</script>
+
+<script type="text/html" id="tab-li-tpl">
+<li data-nick="<%= this.nick %>"><%= this.nick %> <img src="img/cancel.png" class="close" alt="Close" /></li>
+</script>
+
+<script type="text/html" id="msg-p-tpl">
+<p>[<%= moment().format('h:mm:ss A') %>] <b><%= this.nick %>:</b> <%= this.message %></p>
+</script>
+
+<script type="text/html" id="sysmsg-p-tpl">
+<p style="color: <%= this.color %>;">[<%= moment().format('h:mm:ss A') %>] <b>[SYSTEM]:</b> <%= this.message %></p>
+</script>
+
+<script type="text/html" id="user-dlg-tpl">
+<div>
+<ul>
+<li><%= this.nick %></li>
+</ul>
+</div>
+</script>
+
+<script src="chatio.client.js"></script>
+</body>
+</html>
